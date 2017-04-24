@@ -1,0 +1,3 @@
+#ignoring index.php file created by WordPress, also ignoring cmb2 library which I am not a maker of.
+cmb2/**
+index.php
