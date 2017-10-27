@@ -1,0 +1,1 @@
+Adds functions to add weekly menus, schedules and other reusable information as well as hiding excess wordpress functions
