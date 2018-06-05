@@ -1,9 +1,9 @@
 <?php
 /**
-* Plugin Name: Tools for schools - custom enhancements to Admin panel
-* Description: Adds functions to add weekly menus, schedules and other reusable information as well as hiding excess wordpress functions
+* Plugin Name: Tools For Schools - custom enhancements
+* Description: Customize Admin UI, adds field to set a important date for post (that will be shown in agenda)
 * Authro: Karel Suchomel
-* Version: 0.01
+* Version: 0.2
 * License: MIT
 */
 
@@ -30,8 +30,16 @@ function tfs_admin_enqueue_scripts()
 }
 add_action( 'admin_enqueue_scripts', 'tfs_admin_enqueue_scripts' );
 
+// edit formating toolbar of TiniMCE editor
+require_once( plugin_dir_path(__FILE__) . 'tinimce-toolbar-settings.php');
+
 // remove all metaboxes from dashboard page and remove unused menu items
 require_once( plugin_dir_path(__FILE__) . 'filter-wordpress-ui.php');
 
+// register custom tag: "has-gallery" for posts that includes gallery
+// require_once( plugin_dir_path(__FILE__) . 'taxonomy-tfs-meta-tags.php');
+
 // add custom metaboxes () for posts
 require_once( plugin_dir_path(__FILE__) . 'post-metaboxes/posts-fields.php');
+
+// run after plugin installation
